@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GoldBite NG - Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="Style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #7b1f22;
+      color: white;
+    }
+
+    /* Navbar styles */
+    nav {
+      background-color: #5a1518;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    header {
+      padding: 1rem;
+      background-color: #5a1518;
+      text-align: center;
+      color: #d4af37;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .menu-section {
+      padding: 2rem;
+    }
+
+    .category-title {
+      font-size: 1.8rem;
+      margin: 1.5rem 0 1rem;
+      color: #d4af37;
+      border-bottom: 2px solid #d4af37;
+    }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .food-card {
+      background-color: #5a1518;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    }
+
+    .food-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .food-info {
+      padding: 1rem;
+    }
+
+    .food-info h4 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .food-info p {
+      margin: 0.5rem 0;
+    }
+
+    .food-info button {
+      padding: 0.5rem;
+      width: 100%;
+      background-color: #d4af37;
+      color: #7b1f22;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .food-info button:hover {
+      background-color: #b68c2e;
+    }
+
+    footer {
+      background-color: #5a1518;
+      padding: 1.5rem;
+      text-align: center;
+      color: #ccc;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="Home.html">Home</a>
+    <a href="Menu.html">Menu</a>
+    <a href="order-tracking.html">Track Order</a>
+    <a href="LS.html">Login</a>
+    <a href="signup.html">Sign Up</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+
+  <header>GoldBite NG Menu</header>
+
+  <div class="menu-section">
+    <div class="category-title">🍲 Soups</div>
+    <div class="food-grid">
+      <div class="food-card">
+        <img src="https://example.com/egusi.jpg" alt="Egusi Soup">
+        <div class="food-info">
+          <h4>Egusi Soup</h4>
+          <p>₦1500</p>
+          <button onclick="addToCart('Egusi Soup', 1500)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="food-card">
+        <img src="https://example.com/ogbono.jpg" alt="Ogbono Soup">
+        <div class="food-info">
+          <h4>Ogbono Soup</h4>
+          <p>₦1400</p>
+          <button onclick="addToCart('Ogbono Soup', 1400)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-title">🍚 Rice Dishes</div>
+    <div class="food-grid">
+      <div class="food-card">
+        <img src="https://example.com/jollof.jpg" alt="Jollof Rice">
+        <div class="food-info">
+          <h4>Jollof Rice</h4>
+          <p>₦1200</p>
+          <button onclick="addToCart('Jollof Rice', 1200)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="food-card">
+        <img src="https://example.com/fried-rice.jpg" alt="Fried Rice">
+        <div class="food-info">
+          <h4>Fried Rice</h4>
+          <p>₦1300</p>
+          <button onclick="addToCart('Fried Rice', 1300)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-title">🥣 Swallows</div>
+    <div class="food-grid">
+      <div class="food-card">
+        <img src="https://example.com/amala.jpg" alt="Amala">
+        <div class="food-info">
+          <h4>Amala</h4>
+          <p>₦500</p>
+          <button onclick="addToCart('Amala', 500)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="food-card">
+        <img src="https://example.com/pounded-yam.jpg" alt="Pounded Yam">
+        <div class="food-info">
+          <h4>Pounded Yam</h4>
+          <p>₦700</p>
+          <button onclick="addToCart('Pounded Yam', 700)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-title">🍢 Snacks</div>
+    <div class="food-grid">
+      <div class="food-card">
+        <img src="https://example.com/meat-pie.jpg" alt="Meat Pie">
+        <div class="food-info">
+          <h4>Meat Pie</h4>
+          <p>₦400</p>
+          <button onclick="addToCart('Meat Pie', 400)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="food-card">
+        <img src="https://example.com/puff-puff.jpg" alt="Puff Puff">
+        <div class="food-info">
+          <h4>Puff Puff</h4>
+          <p>₦300</p>
+          <button onclick="addToCart('Puff Puff', 300)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-title">🥤 Drinks</div>
+    <div class="food-grid">
+      <div class="food-card">
+        <img src="https://example.com/zobo.jpg" alt="Zobo">
+        <div class="food-info">
+          <h4>Zobo</h4>
+          <p>₦200</p>
+          <button onclick="addToCart('Zobo', 200)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="food-card">
+        <img src="https://example.com/chapman.jpg" alt="Chapman">
+        <div class="food-info">
+          <h4>Chapman</h4>
+          <p>₦300</p>
+          <button onclick="addToCart('Chapman', 300)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 GoldBite NG. All rights reserved. | Designed with ❤️ in Nigeria.
+  </footer>
+  <script>
+    let cart = [];
+    function addToCart(name, price) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Check if item already exists
+  const index = cart.findIndex(item => item.name === name);
+  if (index > -1) {
+    cart[index].quantity += 1;
+  } else {
+    cart.push({ name, price, quantity: 1 });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert(`${name} added to cart!`);
+}
+  </script>
+</body>
+</html>

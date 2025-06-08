@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoldBite NG - Sign Up</title>
+  <link rel="stylesheet" href="Style.css">
+  <style>
+    /* Color scheme: dark red (#7b1f22), white (#fff), gold (#d4af37) */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #7b1f22;
+      color: white;
+    }
+
+    /* Navbar styles */
+    nav {
+      background-color: #5a1518;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    .signup-container {
+      width: 90%;
+      max-width: 450px;
+      margin: 2rem auto;
+      background-color: #5a1518;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+    }
+    .signup-container h2 {
+      text-align: center;
+      color: #d4af37;
+      margin-bottom: 1.5rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .form-group input {
+      width: 94%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #7b1f22;
+      color: white;
+    }
+    .form-group input:focus {
+      outline: none;
+      border-color: #d4af37;
+      box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+    }
+    .btn-signup {
+      background-color: #d4af37;
+      color: #7b1f22;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: block;
+      margin: 1rem auto;
+    }
+    .btn-signup:hover {
+      background-color: #b68c2e;
+    }
+    footer {
+      background-color: #5a1518;
+      padding: 1.5rem;
+      text-align: center;
+      color: #ccc;
+      margin-top: 2rem;
+    }
+
+    /* Added general link style */
+    a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #d4af37;
+    }
+  </style>
+</head>
+<body>
+    <nav>
+    <a href="Home.html">Home</a>
+</nav>
+  <div class="signup-container">
+    <h2>Sign Up for GoldBite NG</h2>
+    <form id="signupForm">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+      </div>
+      <button type="submit" class="btn-signup">Sign Up</button>
+    </form>
+  </div>
+  <footer>
+    &copy; 2025 GoldBite NG. All rights reserved. | Designed with ❤️ in Nigeria.
+  </footer>
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Get form values
+      const fullName = document.getElementById('fullName').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      // Password validation
+      if (password !== confirmPassword) {
+        alert('Passwords do not match.');
+        return;
+      }
+
+      // Basic email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+
+      // Here you would typically send the data to a server
+      // For now, let's just display the data in an alert
+      alert(`
+        Full Name: ${fullName}
+        Email: ${email}
+        Password: ${password}
+      `);
+
+      // You can add further logic here to handle the form submission
+      // such as sending the data to a server using fetch or XMLHttpRequest
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Track Order - GoldBite NG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="Style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #7b1f22;
+      color: white;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h2 {
+      text-align: center;
+      color: #d4af37;
+      margin-bottom: 1rem;
+    }
+
+    /* Navbar styles */
+    nav {
+      background-color: #5a1518;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    .track-container {
+      max-width: 500px;
+      background-color: #5a1518;
+      margin: auto;
+      padding: 4rem;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    }
+
+    input[type="text"] {
+      width: 93.8%;
+      padding: 1rem;
+      margin-top: 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: #d4af37;
+      color: #7b1f22;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #b68c2e;
+    }
+
+    .status-box {
+      margin-top: 2rem;
+      text-align: center;
+      padding: 1rem;
+      background-color: #4a0f11;
+      border-radius: 10px;
+      font-size: 1.1rem;
+    }
+
+    .progress-bar {
+      margin-top: 1rem;
+      height: 10px;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      width: 0;
+      background-color: #d4af37;
+      transition: width 1s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="Home.html">Home</a>
+    <a href="Menu.html">Menu</a>
+    <a href="order-tracking.html">Track Order</a>
+    <a href="LS.html">Login</a>
+    <a href="signup.html">Sign Up</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+  <h2>Track Your Order</h2>
+
+  <div class="track-container">
+    <label for="orderId">Enter your Order ID:</label>
+    <input type="text" id="orderId" placeholder="e.g. GB12345" />
+    <button onclick="trackOrder()">Track Order</button>
+
+    <div class="status-box" id="statusBox" style="display:none;">
+      <p id="statusText">Searching...</p>
+      <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function trackOrder() {
+      const orderId = document.getElementById('orderId').value.trim();
+      const statusBox = document.getElementById('statusBox');
+      const progress = document.getElementById('progress');
+      const statusText = document.getElementById('statusText');
+
+      if (orderId === '') {
+        alert('Please enter an Order ID.');
+        return;
+      }
+
+      statusBox.style.display = 'block';
+      statusText.textContent = 'Tracking order...';
+      progress.style.width = '0%';
+
+      // Simulated tracking status (mock data)
+      setTimeout(() => {
+        statusText.textContent = 'Order Received';
+        progress.style.width = '33%';
+      }, 1000);
+
+      setTimeout(() => {
+        statusText.textContent = 'Being Prepared';
+        progress.style.width = '66%';
+      }, 3000);
+
+      setTimeout(() => {
+        statusText.textContent = 'On the Way!';
+        progress.style.width = '100%';
+      }, 5000);
+    }
+  </script>
+</body>
+</html>

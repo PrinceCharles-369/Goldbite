@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GoldBite NG - Nigerian Food Delivery</title>
+  <style>
+    /* Color scheme: dark red (#7b1f22), white (#fff), gold (#d4af37) */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #7b1f22;
+      color: white;
+    }
+    header {
+      background-color: #5a1518;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: #d4af37;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #d4af37;
+    }
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: linear-gradient(135deg, #7b1f22 0%, #4a0f11 100%);
+    }
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: #f5deb3;
+    }
+    .btn-order {
+      background-color: #d4af37;
+      color: #7b1f22;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn-order:hover {
+      background-color: #b68c2e;
+    }
+    .menu-section {
+      padding: 3rem 2rem;
+      background-color: #5a1518;
+    }
+    .menu-section h3 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #d4af37;
+    }
+    .dishes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .dish-card {
+      background-color: #7b1f22;
+      border-radius: 12px;
+      width: 260px;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .dish-card:hover {
+      transform: scale(1.05);
+    }
+    .dish-image {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-bottom: 3px solid #d4af37;
+    }
+    .dish-info {
+      padding: 1rem;
+      text-align: center;
+    }
+    .dish-info h4 {
+      margin: 0 0 0.5rem;
+      font-size: 1.3rem;
+    }
+    .dish-info p {
+      font-size: 0.95rem;
+      color: #f5deb3;
+      margin: 0 0 1rem;
+    }
+    .dish-info .price {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #d4af37;
+    }
+    footer {
+      background-color: #5a1518;
+      padding: 1.5rem;
+      text-align: center;
+      color: #ccc;
+      margin-top: 2rem;
+    }
+
+    /* Added general link style to override specific nav link styles */
+    a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #d4af37;
+    }
+
+    /* Style for Track Order and Login sections */
+    .info-section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .info-section h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #d4af37;
+    }
+
+    .info-section p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: #f5deb3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>GoldBite NG</h1>
+  <nav>
+    <a href="Home.html">Home</a>
+    <a href="Menu.html">Menu</a>
+    <a href="order-tracking.html">Track Order</a>
+    <a href="LS.html">Login</a>
+    <a href="signup.html">Sign Up</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Experience Authentic Nigerian Flavors Delivered To You</h2>
+  <p>Order your favorite traditional meals from GoldBite NG and get them delivered hot and fresh wherever you are in Nigeria.</p>
+  <button class="btn-order" onclick="window.location.href='Menu.html'">Order Now</button>
+</section>
+
+<section id="menu" class="menu-section">
+  <h3>Popular Nigerian Dishes</h3>
+  <div class="dishes">
+    <div class="dish-card">
+      <img class="dish-image" src="https://images.unsplash.com/photo-1601924582975-1f229e3d80ae?auto=format&fit=crop&w=400&q=80" alt="Jollof Rice" />
+      <div class="dish-info">
+        <h4>Jollof Rice</h4>
+        <p>Spicy tomato rice cooked with peppers, onions and a secret blend of spices.</p>
+        <div class="price">₦1,500</div>
+      </div>
+    </div>
+    <div class="dish-card">
+      <img class="dish-image" src="https://images.unsplash.com/photo-1562967916-eb82221dfb44?auto=format&fit=crop&w=400&q=80" alt="Egusi Soup" />
+      <div class="dish-info">
+        <h4>Egusi Soup</h4>
+        <p>Melon seed soup with assorted meats served with pounded yam or fufu.</p>
+        <div class="price">₦2,000</div>
+      </div>
+    </div>
+    <div class="dish-card">
+      <img class="dish-image" src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=400&q=80" alt="Suya" />
+      <div class="dish-info">
+        <h4>Suya</h4>
+        <p>Spicy grilled skewered meat served with sliced onions and tomatoes.</p>
+        <div class="price">₦1,200</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="track" class="info-section" style="background-color:#7b1f22;">
+  <h3>Track Your Order</h3>
+  <p>Enter your order ID in the login page to track your delivery status. (Feature coming soon!)</p>
+</section>
+
+<section id="login" class="info-section" style="background-color:#5a1518;">
+  <h3>Login</h3>
+  <p>Login functionality coming soon! Stay tuned.</p>
+</section>
+  <footer>
+    &copy; 2025 GoldBite NG. All rights reserved. | Designed with ❤️ in Nigeria.
+  </footer>
+</body>
+</html>
